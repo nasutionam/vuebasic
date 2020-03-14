@@ -5,6 +5,8 @@ var app = new Vue({
     data: {
         product: "Socks",
         image: "./assets/vmSocks-green-onWhite.jpg",
-        altText: "Mantab"
+        altText: "Mantab",
+        inStock: true,
+        inventory: 9
     }
 })
