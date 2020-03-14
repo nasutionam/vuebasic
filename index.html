@@ -5,7 +5,7 @@
             <img v-bind:src="image" v-bind:alt="altText">
         </div>
         <div class="product-info">
-            <h1>{{product}}</h1>
+            <h1>{{title}}</h1>
             <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory > 0">Almost Sold Out</p>
             <p v-else>Out of stock</p>
@@ -15,10 +15,10 @@
             </ul>
 
             <div class="color-box" 
-                v-for="variant in variants" 
+                v-for="(variant, index) in variants" 
                 :key="variant.variantId"
                 :style="{ backgroundColor: variant.variantColor }"
-                @mouseover="updateProduct(variant.variantImage)">
+                @mouseover="updateProduct(index)">
             </div>
 
             <div class="cart">
